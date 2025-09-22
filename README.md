@@ -16,11 +16,14 @@ Specifically, it compares **Ridge Regression**, **Lasso Regression**, and **Part
 ---
 
 ## 📊 Dataset
-- **Source:** [Insert dataset link or package name here]  
-- **Response Variable (Y):** Continuous outcome variable  
-- **Predictors (X):** ≥10 predictors (continuous and/or categorical)  
-- **Sample Size:** [Insert sample size here]  
-- **Reason for Selection:** The dataset includes multiple predictors and potential multicollinearity, making it suitable for demonstrating Ridge, Lasso, and PLS regression.
+📊 Dataset Description
+
+Name / Title: Car Features and MSRP
+Source: Kaggle — Car Features and MSRP by Cooper Union 
+Kaggle
++1
+
+Link: https://www.kaggle.com/datasets/CooperUnion/cardataset
 
 ---
 
