@@ -23,6 +23,37 @@ Understand **regularization** and **dimension-reduction** techniques in regressi
 - **Reason for use:** Dataset contains continuous and categorical predictors suitable for regression and demonstrates multicollinearity.
 
 ---
+### Correlation
+<img width="653" height="403" alt="image" src="https://github.com/user-attachments/assets/a4624da8-35d0-4754-9d43-3b024cfc3e69" />
+
+###### Strongest Relationships (Important for Modeling)
+
+| Variables                                         | Correlation | Meaning                                                                                                           |
+| ------------------------------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------- |
+| **median_income ↔ median_house_value**            | **+0.688**  | 💰 Strong positive link — as income rises, house prices rise. This will be your **most important predictor**.     |
+| **total_rooms ↔ total_bedrooms**                  | **+0.93**   | 🏠 Very strong correlation — more rooms mean more bedrooms (redundant variable, may cause **multicollinearity**). |
+| **population ↔ households**                       | **+0.91**   | 👨‍👩‍👧 Strong link — higher population → more households (also redundant).                                      |
+| **ocean_proximityINLAND ↔ median_house_value**    | **–0.485**  | 🏜️ Negative — inland houses are cheaper than coastal ones.                                                       |
+| **ocean_proximity<1H OCEAN ↔ median_house_value** | **+0.258**  | 🌊 Positive — homes near the ocean (<1 hour) are more expensive.                                                  |
+
+##### Moderate or Weak Relationships
+
+
+| Variables                                   | Correlation | Interpretation                                                           |
+| ------------------------------------------- | ----------- | ------------------------------------------------------------------------ |
+| **housing_median_age ↔ median_house_value** | +0.106      | Older neighborhoods are *slightly* more expensive.                       |
+| **longitude ↔ latitude**                    | –0.925      | Strong negative — these two describe location (redundant spatially).     |
+| **total_rooms ↔ median_house_value**        | +0.133      | Slightly higher house value with more rooms, but not a strong predictor. |
+
+
+3️⃣ Collinearity Warnings (Variables too similar)
+
+To prevent overfitting during regularization or regression:
+
+total_rooms, total_bedrooms, households, and population are highly correlated.
+👉 Keep only one or two (e.g., total_rooms and population) or standardize before modeling.
+
+longitude and latitude are location proxies — keep both, but be aware they are not independent.
 
 ## 2. Model Fitting
 
@@ -83,9 +114,17 @@ Understand **regularization** and **dimension-reduction** techniques in regressi
 
 
 ## 4. Visualizations
-- **Coefficient Paths:** Show Ridge/Lasso coefficient shrinkage as λ increases.  
-- **Cross-Validation Curves:** RMSE vs λ (Ridge/Lasso) and vs number of components (PLS).  
-- **Fitted Line / Scatter:** Predicted vs actual house values.  
+- **Coefficient Paths:** Show Ridge/Lasso coefficient shrinkage as λ increases.
+  <img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/ca757c0f-cfe1-45bb-8224-1f5a3bbba13f" />
+ 
+- **Cross-Validation Curves:** RMSE vs λ (Ridge/Lasso) and vs number of components (PLS).
+-  <img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/c6e6944d-453b-48ab-8223-7a17e5fe38f5" />
+
+<img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/a9853795-1ca9-48d8-acc4-031e11506c20" />
+
+
+- **Fitted Line / Scatter:** Predicted vs actual house values.
+-  
 - **Diagnostic Plots (Lasso):** Residuals vs fitted, Q-Q plot.
 
 ---
