@@ -1,48 +1,101 @@
-# Regression Regularization Project
+# Statistical Modelling Assignment: California Housing Data
 
-## 📌 Objective
-The purpose of this project is to explore **regularization** and **dimension-reduction** techniques in regression analysis.  
-Specifically, it compares **Ridge Regression**, **Lasso Regression**, and **Partial Least Squares (PLS)** regression in terms of their ability to handle multicollinearity, perform feature selection, and improve predictive performance.
-
----
-
-## 📚 Contents
-- `data/` – dataset (or link to source) and dataset description  
-- `R/` – R scripts for data preprocessing, model fitting, and helper functions  
-- `report/` – final RMarkdown report (max 10 pages)  
-- `docs/` – generated figures and tables  
-- `outputs/` – model outputs and saved results  
+**Course:** Statistical Modelling (Year 3)  
+**Weight:** 20 Marks  
+**Due Date:** 17th October 2025  
 
 ---
 
-## 📊 Dataset
-📊 Dataset Description
-
-Name / Title: Car Features and MSRP
-Source: Kaggle — Car Features and MSRP by Cooper Union 
-Kaggle
-+1
-
-Link: https://www.kaggle.com/datasets/CooperUnion/cardataset
+## Objective
+Understand **regularization** and **dimension-reduction** techniques in regression:
+- **Ridge Regression**
+- **Lasso Regression**
+- **Partial Least Squares (PLS) Regression**
 
 ---
 
-## ⚙️ Methods
-1. **Ridge Regression** – adds L2 penalty to shrink coefficients and handle multicollinearity.  
-2. **Lasso Regression** – adds L1 penalty, shrinking some coefficients to zero (feature selection).  
-3. **Partial Least Squares (PLS)** – projects predictors into latent components while considering the response.  
+## 1. Data Description
+- **Dataset:** California Housing Dataset  
+- **Source:** [Public dataset](https://www.dcc.fc.up.pt/~ltorgo/Regression/cal_housing.html)  
+- **Sample size:** 20,433 observations  
+- **Predictors:** 13 variables (longitude, latitude, total rooms, households, median income, ocean proximity categories)  
+- **Response variable:** `median_house_value` (continuous)  
+- **Reason for use:** Dataset contains continuous and categorical predictors suitable for regression and demonstrates multicollinearity.
 
 ---
 
-## 📈 Deliverables
-- **Report:** Includes introduction, methodology, results, discussion, and references (≤10 pages).  
-- **Code:** All R scripts (`.R`) or RMarkdown (`.Rmd`) files.  
-- **Dataset:** Either uploaded or linked if publicly available.  
+## 2. Model Fitting
+
+### 2.1 Linear Regression
+- **Formula:**  
+  `median_house_value ~ longitude + latitude + housing_median_age + total_rooms + total_bedrooms + population + households + median_income + ocean_proximity variables`
+- **Test Performance:**  
+  - RMSE: 67,873.12  
+  - R-squared: 0.655431  
 
 ---
 
-## ▶️ How to Run
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/aykahsay/regression-regularization-project.git
-   cd regression-regularization-project
+### 2.2 Ridge Regression (L2 Regularization)
+- **Best λ (via CV):** 7,889.342  
+- **Test Performance:**  
+  - RMSE: 69,274.66  
+  - R-squared: 0.6399324  
+- **Interpretation:** Shrinks coefficients to reduce multicollinearity while keeping all predictors.
+
+---
+
+### 2.3 Lasso Regression (L1 Regularization)
+- **Best λ (via CV):** 55.77027  
+- **Test Performance:**  
+  - RMSE: 67,651.67  
+  - R-squared: 0.6566063  
+- **Interpretation:** Performs feature selection by setting some coefficients exactly to zero, simplifying the model.
+
+---
+
+### 2.4 Partial Least Squares (PLS) Regression
+- **Optimal Components:** 10  
+- **Test Performance:**  
+  - RMSE: 67,902.41  
+  - R-squared: 0.6555516  
+- **Interpretation:** Reduces dimensionality and handles multicollinearity while preserving predictive power.
+
+---
+
+## 3. Comparative Results
+
+| Model  | RMSE       | R-squared |
+|--------|------------|-----------|
+| Linear | 67,873.12  | 0.655431  |
+| Ridge  | 69,274.66  | 0.6399324 |
+| Lasso  | 67,651.67  | 0.6566063 |
+| PLS    | 67,902.41  | 0.6555516 |
+
+**Key Insights:**
+- **Lasso** performs best in RMSE and R².  
+- **Ridge** reduces multicollinearity without dropping variables.  
+- **PLS** reduces dimensions, balancing complexity and prediction.  
+- **Linear regression** performs well but may suffer from multicollinearity.
+
+---
+
+## 4. Visualizations
+- **Coefficient Paths:** Show Ridge/Lasso coefficient shrinkage as λ increases.  
+- **Cross-Validation Curves:** RMSE vs λ (Ridge/Lasso) and vs number of components (PLS).  
+- **Fitted Line / Scatter:** Predicted vs actual house values.  
+- **Diagnostic Plots (Lasso):** Residuals vs fitted, Q-Q plot.
+
+---
+
+## 5. Interpretation & Discussion
+- **Feature Selection:** Lasso removes irrelevant predictors.  
+- **Handling Multicollinearity:** Ridge shrinks correlated coefficients; PLS combines them into components.  
+- **Predictive Performance:** Lasso achieves lowest RMSE.  
+- **Practical Implications:** Use Lasso for variable selection; Ridge/PLS for multicollinearity handling or dimension reduction.
+
+---
+
+## 6. References
+1. Hastie, T., Tibshirani, R., & Friedman, J. (2009). *The Elements of Statistical Learning*. Springer.  
+2. James, G., Witten, D., Hastie, T., & Tibshirani, R. (2013). *An Introduction to Statistical Learning*. Springer.  
+3. California Housing Dataset. Retrieved from [https://www.dcc.fc.up.pt/~ltorgo/Regression/cal_housing.html](https://www.dcc.fc.up.pt/~ltorgo/Regression/cal_housing.html)  
