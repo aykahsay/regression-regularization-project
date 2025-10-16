@@ -120,14 +120,44 @@ longitude and latitude are location proxies — keep both, but be aware they are
 - **Cross-Validation Curves:** RMSE vs λ (Ridge/Lasso) and vs number of components (PLS).
 -  <img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/c6e6944d-453b-48ab-8223-7a17e5fe38f5" />
 
+- Best lambda for lasso =67.03995
 <img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/a9853795-1ca9-48d8-acc4-031e11506c20" />
 
+<img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/4f23833a-17f7-4d0b-b98d-c3122f61e9fd" />
+- Best lambda for Ridge= 7889.342
 
 - **Fitted Line / Scatter:** Predicted vs actual house values.
--  
+-  <img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/4ee54595-4e9e-444a-a189-b61c2f1a8a05" />
+
 - **Diagnostic Plots (Lasso):** Residuals vs fitted, Q-Q plot.
+- <img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/6b9363b9-a0c4-469a-8e9c-04de9918eeb9" />
+
 
 ---
+## Table 4: Comparative Coefficient Analysis — California Housing Dataset (Unscaled)
+
+| Predictor Variable             | OLS Coefficient | Ridge Coefficient (λ = 7,889.342) | Lasso Coefficient (λ = 55.77027) |
+|--------------------------------|----------------:|----------------------------------:|---------------------------------:|
+| Intercept                      | -2,255,000      | -774,929                          | -2,159,600                       |
+| longitude                      | -26,720         | -9,294                            | -25,624                          |
+| latitude                       | -25,490         | -8,527                            | -24,590                          |
+| housing_median_age             | 1,074           | 995                               | 1,061                            |
+| total_rooms                    | -6.61           | 0.72                              | -6.02                            |
+| total_bedrooms                 | 108.8           | 41.80                             | 103.8                            |
+| population                     | -35.97          | -23.53                            | -33.33                           |
+| households                     | 37.85           | 35.66                             | 32.99                            |
+| median_income                  | 39,610          | 35,555                            | 39,330                           |
+| ocean_proximity <1H OCEAN      | -4,668          | 18,331                            | 0                                |
+| ocean_proximity INLAND         | -44,430         | -45,075                           | -41,324                          |
+| ocean_proximity ISLAND         | 147,700         | 160,311                           | 133,277                          |
+| ocean_proximity NEAR BAY       | -7,389          | 22,084                            | -1,181                           |
+| ocean_proximity NEAR OCEAN     | NA              | 27,409                            | 4,408                            |
+
+### Insights
+- **Ridge Regression** shrinks large coefficients to reduce overfitting.  
+- **Lasso Regression** sets some coefficients to zero, performing feature selection.  
+- **Lasso** retains strong predictors like `median_income` and `longitude`, offering both accuracy and interpretability.
+
 
 ## 5. Interpretation & Discussion
 - **Feature Selection:** Lasso removes irrelevant predictors.  
