@@ -78,6 +78,7 @@ Understand **regularization** and **dimension-reduction** techniques in regressi
 - **Linear regression** performs well but may suffer from multicollinearity.
 
 ---
+<img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/8c8c069d-6e84-4c5e-9f3b-5d5e2dd7123e" />
 
 ## 4. Visualizations
 - **Coefficient Paths:** Show Ridge/Lasso coefficient shrinkage as λ increases.  
