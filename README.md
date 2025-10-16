@@ -109,8 +109,7 @@ longitude and latitude are location proxies — keep both, but be aware they are
 - **Linear regression** performs well but may suffer from multicollinearity.
 
 ---
-<img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/8c8c069d-6e84-4c5e-9f3b-5d5e2dd7123e" />
-<img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/32d00a98-ed15-4385-994b-52c1cf8d1a83" />
+
 
 
 ## 4. Visualizations
@@ -127,7 +126,8 @@ longitude and latitude are location proxies — keep both, but be aware they are
 - Best lambda for Ridge= 7889.342
 
 - **Fitted Line / Scatter:** Predicted vs actual house values.
--  <img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/4ee54595-4e9e-444a-a189-b61c2f1a8a05" />
+<img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/8c8c069d-6e84-4c5e-9f3b-5d5e2dd7123e" />
+<img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/64bf6e65-2af1-4524-a050-c84b66435e96" />
 
 - **Diagnostic Plots (Lasso):** Residuals vs fitted, Q-Q plot.
 - <img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/6b9363b9-a0c4-469a-8e9c-04de9918eeb9" />
