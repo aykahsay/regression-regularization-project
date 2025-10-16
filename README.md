@@ -119,18 +119,18 @@ longitude and latitude are location proxies — keep both, but be aware they are
 - **Cross-Validation Curves:** RMSE vs λ (Ridge/Lasso) and vs number of components (PLS).
 -  <img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/c6e6944d-453b-48ab-8223-7a17e5fe38f5" />
 
-- Best lambda for lasso =67.03995
+- **Best lambda for lasso =67.03995**
 <img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/a9853795-1ca9-48d8-acc4-031e11506c20" />
 
 <img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/4f23833a-17f7-4d0b-b98d-c3122f61e9fd" />
-- Best lambda for Ridge= 7889.342
+- **Best lambda for Ridge= 7889.342**
 
 - **Fitted Line / Scatter:** Predicted vs actual house values.
 <img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/8c8c069d-6e84-4c5e-9f3b-5d5e2dd7123e" />
 <img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/64bf6e65-2af1-4524-a050-c84b66435e96" />
 
 - **Diagnostic Plots (Lasso):** Residuals vs fitted, Q-Q plot.
-- <img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/6b9363b9-a0c4-469a-8e9c-04de9918eeb9" />
+ <img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/6b9363b9-a0c4-469a-8e9c-04de9918eeb9" />
 
 
 ---
