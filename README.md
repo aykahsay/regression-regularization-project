@@ -1,7 +1,6 @@
 # Statistical Modelling Assignment: California Housing Data
 
-**Course:** Statistical Modelling (Year 3)  
-**Weight:** 20 Marks  
+**Course:** Statistical Modelling (STA3010VA)  
 **Due Date:** 17th October 2025  
 
 ---
@@ -13,6 +12,71 @@ Understand **regularization** and **dimension-reduction** techniques in regressi
 - **Partial Least Squares (PLS) Regression**
 
 ---
+# Regularization and Dimension Reduction in Regression
+
+This document provides a brief overview of Ridge Regression, Lasso Regression, and Partial Least Squares (PLS) Regression.
+
+---
+
+## 1. Ridge Regression (L2 Regularization)
+
+**Purpose:** Shrinks coefficients to prevent overfitting.  
+
+**How it works:** Adds a penalty term proportional to the sum of squared coefficients to the ordinary least squares (OLS) loss function.  
+
+**Formula:**
+
+Minimize Σ (yᵢ - ŷᵢ)² + λ Σ (βⱼ²)
+
+- yᵢ = observed value  
+- ŷᵢ = predicted value  
+- βⱼ = coefficient for predictor j  
+- λ = tuning parameter controlling shrinkage  
+
+**Effect:**  
+- Coefficients are shrunk toward zero but **never exactly zero**.  
+- Useful for highly correlated predictors.
+
+---
+
+## 2. Lasso Regression (L1 Regularization)
+
+**Purpose:** Performs both regularization and variable selection.  
+
+**How it works:** Adds a penalty term proportional to the sum of absolute values of coefficients.  
+
+**Formula:**
+
+Minimize Σ (yᵢ - ŷᵢ)² + λ Σ |βⱼ|
+
+**Effect:**  
+- Some coefficients can be shrunk **exactly to zero**, effectively removing those predictors.  
+- Ideal for sparse models to identify the most important predictors.
+
+---
+
+## 3. Partial Least Squares (PLS) Regression
+
+**Purpose:** Reduces dimensions while predicting the response, handling high-dimensional and multicollinear data.  
+
+**How it works:**  
+- Finds new components (latent variables) as linear combinations of predictors.  
+- Components **maximize covariance between predictors and the response**.  
+
+**Effect:**  
+- Reduces the number of predictors into fewer components.  
+- Works well when predictors are highly correlated or when predictors outnumber observations.
+
+---
+
+## Quick Comparison
+
+| Method | Shrinks Coefficients? | Can Zero Coefficients? | Handles Multicollinearity? | Reduces Dimensions? |
+|--------|--------------------|----------------------|----------------------------|-------------------|
+| Ridge  | Yes                | No                   | Yes                        | No                |
+| Lasso  | Yes                | Yes                  | Yes                        | No                |
+| PLS    | No (not exactly)   | No                   | Yes                        | Yes               |
+
 
 ## 1. Data Description
 - **Dataset:** California Housing Dataset  
