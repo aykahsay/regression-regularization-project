@@ -117,11 +117,11 @@ longitude and latitude are location proxies — keep both, but be aware they are
   <img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/ca757c0f-cfe1-45bb-8224-1f5a3bbba13f" />
  
 - **Cross-Validation Curves:** RMSE vs λ (Ridge/Lasso) and vs number of components (PLS).
--  <img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/c6e6944d-453b-48ab-8223-7a17e5fe38f5" />
+ <img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/c6e6944d-453b-48ab-8223-7a17e5fe38f5" />
 
 - **Best lambda for lasso =67.03995**
 <img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/a9853795-1ca9-48d8-acc4-031e11506c20" />
-
+- **The optimal number of components was determined to be 10**
 <img width="636" height="393" alt="image" src="https://github.com/user-attachments/assets/4f23833a-17f7-4d0b-b98d-c3122f61e9fd" />
 - **Best lambda for Ridge= 7889.342**
 
